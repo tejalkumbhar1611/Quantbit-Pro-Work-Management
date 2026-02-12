@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "IP-.#####",
+ "creation": "2026-02-11 16:34:04.854239",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "applicant_type_section",
+  "applicant_type",
+  "column_break_yceb",
+  "employee",
+  "basic_information_section",
+  "full_name",
+  "gender",
+  "column_break_qyed",
+  "nationality",
+  "date_of_birth",
+  "contact_details_section",
+  "mobile",
+  "column_break_ejzg",
+  "email",
+  "column_break_wjwc",
+  "address",
+  "identity_details_section",
+  "passport_no",
+  "column_break_oxrh",
+  "passport_expiry",
+  "column_break_xvje",
+  "national_id",
+  "system_information_section",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "fieldname": "column_break_qyed",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "column_break_ejzg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "column_break_wjwc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "identity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Identity Details"
+  },
+  {
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_oxrh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_expiry",
+   "fieldtype": "Date",
+   "label": "Passport Expiry"
+  },
+  {
+   "fieldname": "column_break_xvje",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID"
+  },
+  {
+   "fieldname": "system_information_section",
+   "fieldtype": "Section Break",
+   "label": "System Information"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nBlacklisted"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "applicant_type",
+   "fieldtype": "Select",
+   "label": "Applicant Type",
+   "options": "Employee\nExternal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_yceb",
+   "fieldtype": "Column Break",
+   "mandatory_depends_on": "eval:doc.applicant_type==\"Employee\"\n"
+  },
+  {
+   "depends_on": "eval:doc.applicant_type==\"Employee\"",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee ",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "applicant_type_section",
+   "fieldtype": "Section Break",
+   "label": "Applicant Type"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-12 15:36:09.319709",
+ "modified_by": "Administrator",
+ "module": "Quantbit Pro Work Management",
+ "name": "Applicant",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Active"
+  },
+  {
+   "color": "Gray",
+   "title": "Inactive"
+  },
+  {
+   "color": "Red",
+   "title": "Blacklisted"
+  }
+ ],
+ "track_changes": 1
+}

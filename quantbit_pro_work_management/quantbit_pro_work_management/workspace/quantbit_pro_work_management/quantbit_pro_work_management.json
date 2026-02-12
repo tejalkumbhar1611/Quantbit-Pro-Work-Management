@@ -1,0 +1,88 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"NhqJykXRR9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quantbit Pro Work Management</span>\",\"col\":12}},{\"id\":\"hRtqY-tl9d\",\"type\":\"card\",\"data\":{\"card_name\":\"Master and Setup\",\"col\":4}},{\"id\":\"jGjqzKvbUy\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}}]",
+ "creation": "2026-02-12 09:44:35.018177",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "shortcut",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Quantbit Pro Work Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master and Setup",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Document Category",
+   "link_count": 0,
+   "link_to": "Document Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Document Type",
+   "link_count": 0,
+   "link_to": "Document Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Applicant",
+   "link_count": 0,
+   "link_to": "Applicant",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Document Application",
+   "link_count": 0,
+   "link_to": "Document Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-12 15:17:13.367942",
+ "modified_by": "Administrator",
+ "module": "Quantbit Pro Work Management",
+ "name": "Quantbit Pro Work Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 36.0,
+ "shortcuts": [],
+ "title": "Quantbit Pro Work Management"
+}

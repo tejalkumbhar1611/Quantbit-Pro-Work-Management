@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:document_type_name",
+ "creation": "2026-02-11 16:20:50.042696",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "register_document_category_section",
+  "document_type_name",
+  "document_type_code",
+  "reminder_days_before_expiry",
+  "is_active",
+  "column_break_maeu",
+  "document_category",
+  "validity_months",
+  "renewal_allowed",
+  "has_expiry",
+  "details_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "register_document_category_section",
+   "fieldtype": "Section Break",
+   "label": "Register Document Category"
+  },
+  {
+   "fieldname": "document_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Type Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "document_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Category",
+   "options": "Document Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "1",
+   "fieldname": "has_expiry",
+   "fieldtype": "Check",
+   "label": "Has Expiry"
+  },
+  {
+   "fieldname": "validity_months",
+   "fieldtype": "Int",
+   "label": "Validity (Months)",
+   "mandatory_depends_on": "eval:doc.has_expiry==1"
+  },
+  {
+   "default": "1",
+   "fieldname": "renewal_allowed",
+   "fieldtype": "Check",
+   "label": "Renewal Allowed"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "document_type_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Type Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_maeu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "reminder_days_before_expiry",
+   "fieldtype": "Int",
+   "label": "Reminder Days Before Expiry"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-12 10:42:33.559447",
+ "modified_by": "Administrator",
+ "module": "Quantbit Pro Work Management",
+ "name": "Document Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,359 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "APP-.YYYY.-.#####",
+ "creation": "2026-02-11 16:53:22.630426",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_wkgz",
+  "applicant",
+  "applicant_full_name",
+  "document_category",
+  "transaction_type",
+  "column_break_ipgp",
+  "posting_date",
+  "passport_no",
+  "document_type",
+  "document_details_section",
+  "applied_date",
+  "purpose",
+  "status",
+  "column_break_iqta",
+  "country",
+  "fees",
+  "status_and_processing_section",
+  "document_number",
+  "issue_date",
+  "column_break_leml",
+  "validity_months",
+  "expiry_date",
+  "application_info_section",
+  "previous_document",
+  "previous_expiry_date",
+  "allow_expiry_override",
+  "column_break_helk",
+  "renewal_fees",
+  "renewal_reason",
+  "extension_section",
+  "previous_referred_document",
+  "previous_referred_expiry_date",
+  "extended_date",
+  "column_break_uotc",
+  "extension_fees",
+  "extension_reason",
+  "for_override_section",
+  "override_reason",
+  "supporting_documents_section",
+  "supporting_document",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_wkgz",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Applicant",
+   "options": "Applicant",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "applicant.full_name",
+   "fieldname": "applicant_full_name",
+   "fieldtype": "Data",
+   "label": "Applicant Full Name"
+  },
+  {
+   "fetch_from": "applicant.passport_no",
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document_details_section",
+   "fieldtype": "Section Break",
+   "label": "Application Details"
+  },
+  {
+   "fieldname": "document_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Category",
+   "options": "Document Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "mandatory_depends_on": "eval:doc.document_category",
+   "options": "Document Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Data",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type==\"Renewal\" ",
+   "fieldname": "application_info_section",
+   "fieldtype": "Section Break",
+   "label": "Renewal Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "applied_date",
+   "fieldtype": "Date",
+   "label": "Applied Date"
+  },
+  {
+   "fieldname": "fees",
+   "fieldtype": "Currency",
+   "label": "Fees"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Issued\" || doc.status==\"Active\"",
+   "fieldname": "status_and_processing_section",
+   "fieldtype": "Section Break",
+   "label": "Issuance Details"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nUnder Review\nWaiting Docs\nApproved\nRejected\nIssued\nActive\nRenewed\nExtended\nExpired\nCancelled"
+  },
+  {
+   "fieldname": "column_break_ipgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_iqta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_helk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supporting_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Supporting Documents"
+  },
+  {
+   "fieldname": "supporting_document",
+   "fieldtype": "Table",
+   "label": "Supporting Document",
+   "options": "Supporting Document"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "New Application\nRenewal\nExtension\nReplacement\nCancellation"
+  },
+  {
+   "fieldname": "document_number",
+   "fieldtype": "Data",
+   "label": "Document Number"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "column_break_leml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "document_type.validity_months",
+   "fieldname": "validity_months",
+   "fieldtype": "Int",
+   "label": "Validity (Months)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "previous_document",
+   "fieldtype": "Link",
+   "label": "Previous Document",
+   "options": "Document Application"
+  },
+  {
+   "fieldname": "renewal_fees",
+   "fieldtype": "Currency",
+   "label": "Renewal Fees"
+  },
+  {
+   "fieldname": "renewal_reason",
+   "fieldtype": "Small Text",
+   "label": "Renewal Reason"
+  },
+  {
+   "fieldname": "previous_expiry_date",
+   "fieldtype": "Date",
+   "label": "Previous Expiry Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_expiry_override",
+   "fieldtype": "Check",
+   "label": "Allow Expiry Override "
+  },
+  {
+   "fieldname": "override_reason",
+   "fieldtype": "Small Text",
+   "label": "Override Reason"
+  },
+  {
+   "depends_on": "eval:doc.allow_expiry_override==1",
+   "fieldname": "for_override_section",
+   "fieldtype": "Section Break",
+   "label": "For Override"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.transaction_type==\"Extension\"",
+   "fieldname": "extended_date",
+   "fieldtype": "Date",
+   "label": "Extended Date"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type==\"Extension\"",
+   "fieldname": "extension_section",
+   "fieldtype": "Section Break",
+   "label": "Extension Details"
+  },
+  {
+   "fieldname": "column_break_uotc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "extension_reason",
+   "fieldtype": "Small Text",
+   "label": "Extension Reason"
+  },
+  {
+   "fetch_from": "previous_referred_document.expiry_date",
+   "fetch_if_empty": 1,
+   "fieldname": "previous_referred_expiry_date",
+   "fieldtype": "Date",
+   "label": "Previous Referred Expiry Date"
+  },
+  {
+   "fieldname": "previous_referred_document",
+   "fieldtype": "Link",
+   "label": "Previous Referred Document",
+   "options": "Document Application"
+  },
+  {
+   "fieldname": "extension_fees",
+   "fieldtype": "Currency",
+   "label": "Extension Fees"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-12 14:11:15.699286",
+ "modified_by": "Administrator",
+ "module": "Quantbit Pro Work Management",
+ "name": "Document Application",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Light Blue",
+   "title": "Draft"
+  },
+  {
+   "color": "Blue",
+   "title": "Submitted"
+  },
+  {
+   "color": "Yellow",
+   "title": "Under Review"
+  },
+  {
+   "color": "Orange",
+   "title": "Waiting Docs"
+  },
+  {
+   "color": "Green",
+   "title": "Approved"
+  },
+  {
+   "color": "Red",
+   "title": "Rejected"
+  },
+  {
+   "color": "Gray",
+   "title": "Issued"
+  },
+  {
+   "color": "Purple",
+   "title": "Renewed"
+  },
+  {
+   "color": "Pink",
+   "title": "Extended"
+  }
+ ],
+ "track_changes": 1
+}
