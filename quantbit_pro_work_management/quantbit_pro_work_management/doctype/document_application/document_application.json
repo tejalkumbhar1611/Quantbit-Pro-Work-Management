@@ -31,7 +31,7 @@
   "document_number",
   "issue_date",
   "column_break_leml",
-  "validity_months",
+  "validity_days",
   "expiry_date",
   "application_info_section",
   "previous_document",
@@ -91,7 +91,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Document Type",
-   "mandatory_depends_on": "eval:doc.document_category",
    "options": "Document Type",
    "reqd": 1
   },
@@ -186,13 +185,6 @@
   {
    "fieldname": "column_break_leml",
    "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "document_type.validity_months",
-   "fieldname": "validity_months",
-   "fieldtype": "Int",
-   "label": "Validity (Months)",
-   "read_only": 1
   },
   {
    "fieldname": "expiry_date",
@@ -319,6 +311,18 @@
    "options": "Applicant"
   },
   {
+   "fieldname": "new_expiry_date",
+   "fieldtype": "Date",
+   "label": "New Expiry Date"
+  },
+  {
+   "fetch_from": "document_type.validity_days",
+   "fieldname": "validity_days",
+   "fieldtype": "Int",
+   "label": "Validity (Days)",
+   "read_only": 1
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -327,18 +331,13 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "new_expiry_date",
-   "fieldtype": "Date",
-   "label": "New Expiry Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-13 11:50:17.252991",
+ "modified": "2026-02-13 13:26:39.066699",
  "modified_by": "Administrator",
  "module": "Quantbit Pro Work Management",
  "name": "Document Application",

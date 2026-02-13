@@ -19,12 +19,33 @@ class DocumentApplication(Document):
         self.auto_fetch_previous_document()
         if self.allow_expiry_override and not self.override_reason:
             frappe.throw("Override Reason is required when Expiry Override is enabled.")
+        self.set_document_category()
+        self.set_employee_name()
+        self.set_employee_personal_details()
         self.validate_master_data()
         self.validate_transaction_rules()
         self.prevent_duplicate_active()
         self.validate_expiry_dates()
-        self.set_employee_name()
-        self.set_document_category()
+
+    def set_employee_personal_details(self):
+        if self.applicant_type != "Employee":
+            return
+
+        if not self.employee:
+            return
+
+        employee_data = frappe.db.get_value(
+            "Employee",
+            self.employee,
+            ["date_of_birth", "gender"],
+            as_dict=True
+        )
+
+        if not employee_data:
+            frappe.throw("Unable to fetch Employee details.")
+
+        self.date_of_birth = employee_data.date_of_birth
+        self.gender = employee_data.gender
 
     def set_employee_name(self):
         if self.applicant_type == "Employee":
